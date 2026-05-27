@@ -1,3 +1,9 @@
+
+
+
+https://github.com/user-attachments/assets/04cc0e3d-6b41-4174-89b8-237faa86bcab
+
+
 #  From a Forgotten Raspberry Pi to a Handheld Mario Console 🎮🏰👸🏼🍄🐢💗
 
 > A weekend project that taught us more than gaming.
@@ -9,13 +15,9 @@ That innocent question turned into a full-blown hardware, software, Linux, elect
 The result? A fully functional **Super Mario Bros. console powered by a Raspberry Pi 4B**, playable on both a monitor and a 3.5-inch touchscreen display using a classic SNES-style controller.
 
 And perhaps more importantly, a project that reminded me why engineering is so much fun.
+<br><br>
 
----
-
-<!-- Replace with your own project photo -->
-![Project Photo](images/project-photo.jpg)
-
----
+<img width="4096" height="3072" alt="IMG20260525113002" src="https://github.com/user-attachments/assets/3fb9e977-0270-446b-999d-49c08aa56f01" />
 
 ## 🎯 The Goal
 
@@ -33,15 +35,24 @@ Build a dedicated Super Mario Bros gaming console using hardware already sitting
 | Audio | Bluetooth speaker |
 | Storage | MicroSD card |
 | Game | Open-source Super Mario Bros clone ([uMario](https://github.com/anirudhvemula/RaspberryPi_uMario)) |
-
+<br>
 <!-- Replace with your hardware photo -->
-![Hardware Components](images/hardware-components.jpg)
+<img width="600" height="493" alt="3 5&#39;&#39; LCD Display" src="https://github.com/user-attachments/assets/6d7d2fd7-1c2c-410d-892b-ea5ea76ad335" /><br>
+3.5" GPIO Touchscreen LCD (480×320) Display<br><br>
+<img width="600" height="519" alt="Acrylic-case" src="https://github.com/user-attachments/assets/eba6be37-e882-4ecb-82ef-fc6862f18c97" /><br>
+Acrylic Case for Raspberry Pi 4B and 3.5" LCD Display<br><br>
+<img width="600" height="538" alt="gamepad" src="https://github.com/user-attachments/assets/874e7773-5ee0-4b20-a5c7-eaf553fb08cd" /><br>
+Raspberry Pi Compatible Gamepad Controller<br><br>
+<img width="600" height="418" alt="Bluetooth Speaker" src="https://github.com/user-attachments/assets/1584e86c-890a-45a4-91ff-a470eda9858f" /><br>
+Bluetooth Speaker
+<br>
+<br>
 
-The challenge wasn't simply getting the game to run. The challenge was making the entire system behave like a **real game console**:
-❌ No terminal windows
-❌ No keyboard requirements
-❌ No development environment visible
-✅ Just power on and play
+The challenge wasn't simply getting the game to run. The challenge was making the entire system behave like a **real game console**:<br>
+❌ No terminal windows<br>
+❌ No keyboard requirements<br>
+❌ No development environment visible<br>
+✅ Just power on and play<br>
 
 ---
 
@@ -54,12 +65,14 @@ The original game launched inside a desktop window and required terminal executi
 ✅ Borderless
 ✅ Without visible terminal windows
 
-The goal: turn **Linux into an invisible layer** and let Mario become the entire experience.
+The goal: turn **Linux into an invisible layer** and let Mario become the entire experience. <br><br>
 
 <!-- Replace with your fullscreen screenshot -->
-![Mario Fullscreen](images/mario-fullscreen.jpg)
+<img width="800" height="480" alt="Screen1" src="https://github.com/user-attachments/assets/7b740b20-2f0c-4bef-a796-a995868fc427" /> <br>
+Mario game in Window Mode<br><br>
+<img width="800" height="480" alt="Screen2" src="https://github.com/user-attachments/assets/eebbc3ab-1152-4cde-9545-efd7e30b9bc6" /> <br>
 
----
+<br><br>
 
 ### Step 2 — The Operating System Surprise
 
@@ -81,10 +94,10 @@ lsusb
 jstest /dev/input/js0
 ```
 
-**Results:**
-✅ Directional pad detected
-✅ Buttons detected
-✅ Start/Select detected
+**Results:** <br>
+✅ Directional pad detected<br>
+✅ Buttons detected<br>
+✅ Start/Select detected<br>
 
 With the hardware confirmed, the project was compiled and run:
 
@@ -146,21 +159,21 @@ Debugging process:
 5. Recompilation after every change
 6. Extensive gameplay testing
 
-The culprit: **controller event handling and axis interpretation**. After several iterations:
-✅ Walking worked
-✅ Jumping worked
-✅ Pause menu navigation worked
-✅ Start button functionality worked
-✅ Controller became a true keyboard replacement
+The culprit: **controller event handling and axis interpretation**. After several iterations:<br>
+✅ Walking worked<br>
+✅ Jumping worked<br>
+✅ Pause menu navigation worked<br>
+✅ Start button functionality worked<br>
+✅ Controller became a true keyboard replacement<br>
 
 ---
 
 ### Step 5 — Adding Sound
 
-A Mario console without audio is only half a Mario console. A small Bluetooth speaker was paired with the Raspberry Pi. After configuring the audio output:
-🎵 Music played
-🎵 Sound effects worked
-🎵 Wireless audio connected successfully
+A Mario console without audio is only half a Mario console. A small Bluetooth speaker was paired with the Raspberry Pi. After configuring the audio output:<br>
+🎵 Music played<br>
+🎵 Sound effects worked<br>
+🎵 Wireless audio connected successfully<br>
 
 The first time the classic Mario soundtrack came through the speaker felt like a major milestone.
 
@@ -172,12 +185,20 @@ A 3.5-inch Raspberry Pi touchscreen was purchased, advertised as compatible. The
 
 **A completely white screen. No graphics. No desktop. Nothing.**
 
+<img width="600" height="450" alt="IMG20260525004057" src="https://github.com/user-attachments/assets/3e3d5a5b-0e31-4a1b-9af2-c782aa2556df" />
+<br><br>
+
 Hours of investigation followed — different drivers, different repositories, different installation methods, reboots, reinstalls, more reboots.
 
 **Root cause:** The display model supplied by the vendor was not the model described in the documentation.
 
-The **LCDWiki MPI3501** is a 3.5" SPI TFT touchscreen (480×320) based on the **ILI9486 controller** with an **XPT2046 touch controller**. The flashed image (`MPI3508`) was for a *different* display model entirely.
+> The **LCDWiki MPI3501** is a 3.5" SPI TFT touchscreen (480×320) based on the **ILI9486 controller** with an **XPT2046 touch controller**. <br><br>
+> The flashed image (`MPI3508`) was for a *different* display model entirely.
 
+<br>
+<img width="600" height="1067" alt="IMG-20260525-WA0002" src="https://github.com/user-attachments/assets/51186d36-3555-40b5-a0c0-ba736dd1a43f" />
+<br>
+<br>
 Once the correct driver was identified:
 
 ```bash
@@ -188,9 +209,9 @@ cd LCD-show/
 sudo ./LCD35-show
 ```
 
-✅ Display initialized
-✅ Touchscreen responded
-✅ Graphics rendered properly
+✅ Display initialized<br>
+✅ Touchscreen responded<br>
+✅ Graphics rendered properly<br>
 
 > *Sometimes debugging is less about engineering and more about detective work and persistence.*
 
@@ -206,10 +227,16 @@ With SPI enabled:    ✅ Display communication succeeds
 ```
 
 One checkbox. Several hours saved.
+<br><br>
+<img width="640" height="360" alt="rc_cmd_spi_1" src="https://github.com/user-attachments/assets/f0825189-228e-4fcc-8042-8bf96d429d79" />
+<br>
 
 ---
 
 ### Step 8 — Success... Sort Of
+
+<img width="600" height="450" alt="IMG20260524225308" src="https://github.com/user-attachments/assets/1440b2c1-8d78-461b-ad60-9229b27e5e73" /><br>
+Stuck at boot. rc-local.service <br><br>
 
 The LCD finally came alive — but only in terminal mode. Linux booted, text appeared, the screen functioned, yet the graphical desktop refused to launch automatically.
 
@@ -220,8 +247,10 @@ The fix required changing Raspberry Pi startup behavior:
 
 After rebooting: 🎉 **Full Raspberry Pi desktop on the 3.5-inch screen!!!**
 
-<!-- Replace with your LCD success screenshot -->
-![LCD Desktop](images/lcd-desktop.jpg)
+### Success. 😎👌🔥🏆
+<br>
+<img width="600" height="450" alt="IMG20260525030521" src="https://github.com/user-attachments/assets/65cd1345-91ac-4df2-b576-1b14dcfce26c" />
+
 
 ---
 
@@ -234,17 +263,18 @@ More configuration adjustments followed:
 - Restore HDMI detection
 - Verify dual-display functionality
 
-**Final result:**
-✅ HDMI monitor works
-✅ 3.5-inch LCD works
-✅ Mario launches successfully
-✅ Gamepad controls gameplay
-✅ Bluetooth speaker handles audio
+**Final result:**<br>
+✅ HDMI monitor works<br>
+✅ 3.5-inch LCD works<br>
+✅ Mario launches successfully<br>
+✅ Gamepad controls gameplay<br>
+✅ Bluetooth speaker handles audio<br>
 
 **Mission accomplished.** 🏆
+<br>
+<br>
+<img width="600" height="800" alt="IMG20260525123437" src="https://github.com/user-attachments/assets/4f5f189f-2f3b-466a-9863-e2ee4999bce6" />
 
-<!-- Replace with final setup photo -->
-![Final Setup](images/final-setup.jpg)
 
 ---
 
